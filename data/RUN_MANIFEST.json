@@ -1,0 +1,40 @@
+{
+  "experiment": "E-EARL Event-Priority benchmark",
+  "release": "0.3.0",
+  "profile": "confirmatory",
+  "main_experiment_complete": true,
+  "main_run_seed_offset": 1000,
+  "independent_training_seeds": [1000, 1029],
+  "agent_conditions": ["no_event", "schema_only", "event_aware", "shuffled_event", "oracle_event"],
+  "training_episodes_per_agent_seed": 1800,
+  "maximum_episode_horizon": 420,
+  "heldout_episodes_per_agent_seed_per_scenario": 60,
+  "scenarios": ["matched", "noisy_cues", "flat_refuge", "wide_warning"],
+  "training_csv_rows": 270000,
+  "evaluation_csv_rows": 36000,
+  "trained_policy_checkpoints": 150,
+  "algorithm": "Tabular differential Q-learning / average-reward TD; no neural network",
+  "primary_contrast": "event_aware minus schema_only in matched ecology",
+  "co_primary_endpoints": ["held-out reward rate", "episode survival probability"],
+  "multiple_testing": "Holm correction across the two co-primary p-values",
+  "primary_results": {
+    "reward_rate_difference": 0.20318653585734348,
+    "reward_rate_seed_bootstrap_95_ci": [0.18469334959413722, 0.22090893173236847],
+    "reward_rate_holm_adjusted_p": 4.666263030794562e-19,
+    "survival_probability_difference": 0.17055555555555557,
+    "survival_seed_bootstrap_95_ci": [0.12777777777777774, 0.2177777777777777],
+    "survival_holm_adjusted_p": 6.041241960174487e-08
+  },
+  "runtime_seconds_reported_by_run": 30.709885835647583,
+  "validation": {
+    "pytest": "2 passed",
+    "project_runner_smoke_test": "passed",
+    "standalone_runner_smoke_test": "passed"
+  },
+  "important_caveat": "The task mechanics were refined after exploratory pilots that showed reward benefits without clear survival benefits. Final seed IDs are fresh relative to those pilots, but task-design iteration was informed by pilot outcomes. Results apply to this frozen synthetic ecology; survival benefits are not reliable in every stress scenario. This is not a fully independent preregistered task-design replication.",
+  "auxiliary_paper_inspired_benchmark": {
+    "included": true,
+    "n_replicates_per_policy": 30,
+    "description": "Precomputed in a separate run and included in the archive; not rerun as part of the main 30-seed event-priority run. Source code is included to rerun it. It is an inspired discretized calibration, not an exact reproduction of Zeraati et al. (CCN 2025), and rewards are not directly comparable across the two ecologies."
+  }
+}

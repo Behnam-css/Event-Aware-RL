@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eearl-event-priority"
+version = "0.3.0"
+description = "Diagnostic non-neural RL benchmark for temporal event awareness"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "matplotlib>=3.7", "scipy>=1.10", "numba>=0.58"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

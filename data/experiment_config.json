@@ -1,0 +1,47 @@
+{
+  "project": "E-EARL event-priority benchmark",
+  "profile": "confirmatory",
+  "profile_parameters": {
+    "seeds": 30,
+    "train_episodes": 1800,
+    "horizon": 420,
+    "eval_episodes": 60,
+    "cue_noise": 0.12,
+    "alpha": 0.13,
+    "beta": 0.004,
+    "epsilon_start": 1.0,
+    "epsilon_end": 0.04
+  },
+  "seed_offset": 1000,
+  "training_seed_unit": "independent learned policy; N is seeds, not episodes",
+  "modes": [
+    "no_event",
+    "schema_only",
+    "event_aware",
+    "shuffled_event",
+    "oracle_event"
+  ],
+  "algorithm": "tabular differential Q-learning (average-reward TD / R-learning-style gain estimate)",
+  "neural_networks": false,
+  "primary_contrast": "event_aware minus schema_only on matched ecology",
+  "co_primary_endpoints": [
+    "held-out reward_rate",
+    "held-out survival probability"
+  ],
+  "multiplicity": "Holm correction across two co-primary tests; all additional contrasts are secondary",
+  "cue_noise_matched": 0.12,
+  "event_schedule_independent_of_reward_draws": true,
+  "same_action_set_and_update_rule_across_conditions": true,
+  "task_specificity": "temporary refuge has an occupancy-timing constraint during warning-to-attack transitions; a sudden onset may cause multiple injuries",
+  "injury_penalty": 2.0,
+  "terminal_death_penalty": 12.0,
+  "refuge_dwell_threshold": 11,
+  "limitations": [
+    "synthetic diagnostic task",
+    "fixed cue-change detector rather than learned event segmentation",
+    "no claim that event awareness helps in ecologies without temporal transition structure"
+  ],
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "created_utc_epoch_seconds": 1793097057.4801586
+}

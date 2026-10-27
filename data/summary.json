@@ -1,0 +1,75 @@
+{
+  "profile": "confirmatory",
+  "n_independent_training_seeds": 30,
+  "train_episodes_per_agent_seed": 1800,
+  "evaluation_episodes_per_agent_seed_scenario": 60,
+  "primary_comparison": "event_aware - schema_only; matched ecology",
+  "primary_results": [
+    {
+      "metric": "reward_rate",
+      "mean_difference": 0.20318653585734348,
+      "ci95": [
+        0.18469334959413722,
+        0.22090893173236847
+      ],
+      "p_unadjusted": 2.333131515397281e-19,
+      "p_holm": 4.666263030794562e-19,
+      "positive_seed_fraction": 1.0
+    },
+    {
+      "metric": "survival",
+      "mean_difference": 0.17055555555555557,
+      "ci95": [
+        0.12777777777777774,
+        0.2177777777777777
+      ],
+      "p_unadjusted": 6.041241960174487e-08,
+      "p_holm": 6.041241960174487e-08,
+      "positive_seed_fraction": 0.9666666666666667
+    }
+  ],
+  "important_interpretation": "Evidence supports event awareness only if both co-primary endpoints show positive differences and Holm-adjusted p < .05. The experiment does not guarantee this outcome.",
+  "runtime_seconds": 30.709885835647583,
+  "primary_conclusion": {
+    "event_aware_vs_schema_only": "Event-aware tabular differential Q-learning had higher held-out reward rate and survival in the matched timed-refuge ecology; both co-primary differences were positive and Holm-adjusted p < .05.",
+    "reward_rate_difference": 0.20318653585734348,
+    "reward_rate_95ci_seed_bootstrap": [
+      0.18469334959413722,
+      0.22090893173236847
+    ],
+    "reward_rate_holm_p": 4.666263030794562e-19,
+    "survival_difference": 0.17055555555555557,
+    "survival_95ci_seed_bootstrap": [
+      0.12777777777777774,
+      0.2177777777777777
+    ],
+    "survival_holm_p": 6.041241960174487e-08,
+    "positive_seed_fraction_reward_rate": 1.0,
+    "positive_seed_fraction_survival": 0.9666666666666667,
+    "interpretation_scope": "This supports event-awareness in the frozen synthetic timed-refuge ecology. Survival advantages do not consistently generalize to the high-noise and wide-warning stress conditions."
+  },
+  "paper_inspired_patch_baseline": {
+    "description": "Separate discretized three-patch average-reward policy-iteration calibration inspired by Zeraati et al. (CCN 2025); not an exact replication and not directly comparable to the main task.",
+    "n_replicates_per_policy": 30,
+    "results": [
+      {
+        "policy": "MVT-inspired threshold",
+        "mean_reward_rate": 0.5559524997480341,
+        "sd": 0.024758047713878382,
+        "n": 30
+      },
+      {
+        "policy": "Optimized single threshold",
+        "mean_reward_rate": 0.5927634607916212,
+        "sd": 0.021392920238509666,
+        "n": 30
+      },
+      {
+        "policy": "World-model policy iteration",
+        "mean_reward_rate": 0.6219592174030942,
+        "sd": 0.017527685388339688,
+        "n": 30
+      }
+    ]
+  }
+}
