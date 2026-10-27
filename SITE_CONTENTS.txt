@@ -1,0 +1,1 @@
+E-EARL static research page. Start with index.html. See README_PAGES.md for free GitHub Pages deployment. Main report: research_report.md. Technical run report: technical_results_report.md. Downloaded packages are in downloads/.
