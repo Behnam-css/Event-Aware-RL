@@ -1,17 +1,6 @@
-# E-EARL: Event-Priority Reinforcement Learning — Website Package
+# E-EARL: Event-Priority Reinforcement Learning 
 
-This is a static, GitHub Pages–ready research page. It has no build step, no external JavaScript/CSS dependencies, and uses only local images/data/downloads.
 
-## Publish for free with GitHub Pages
-
-1. Create a new GitHub repository (for example, `eearl-event-priority`).
-2. Extract this website ZIP locally.
-3. Upload **the contents of this folder** (not the enclosing folder itself) to the repository root. `index.html` must sit at the top level.
-4. On GitHub, open **Settings → Pages**.
-5. Under “Build and deployment,” choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-6. Wait for GitHub Pages to publish the site; its URL will appear in Settings → Pages.
-
-The page should work on GitHub Pages, GitLab Pages, Cloudflare Pages, Netlify, or any ordinary static web host. The assets, plots, CSVs, source ZIP, and results ZIP are linked with relative paths.
 
 ## Local preview
 
